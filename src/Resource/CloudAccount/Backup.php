@@ -68,7 +68,10 @@ class Backup extends Model {
       );
     }
 
-    $this->_getEndpoint()->deleteBackup($this->get('filename'));
+    $this->_getEndpoint()->deleteBackup(
+      $this->getCloudAccount(),
+      $this->get('filename')
+    );
   }
 
   /**
